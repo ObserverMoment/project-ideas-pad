@@ -7,6 +7,7 @@
 ## Technology Used
 - Node.js
 - MongoDB Atlas
+- Mongoose
 - Handlebars
 - Express Server
 - bcryptjs
