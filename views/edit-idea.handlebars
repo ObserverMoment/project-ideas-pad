@@ -1,0 +1,22 @@
+{{#if ideaNotFound}}
+  <div class="alert alert-danger">{{ideaNotFound}}</div>
+{{/if}}
+
+{{#unless ideaNotFound}}
+  <div class="card card-body">
+    <h3>Edit Idea</h3>
+    <form action="/ideas/{{_id}}?_method=PUT" method="POST">
+      <!-- This is a hidden input used by the method-override module. You state the request type you want to use -->
+      <input type="hidden" name"_method" value="PUT">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" value="{{title}}" required>
+      </div>
+      <div class="form-group">
+        <label for="details">Details</label>
+        <textarea name="details" id="" cols="30" rows="10" class="form-control" required>{{details}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit Changes</button>
+    </form>
+  </div>
+{{/unless}}
